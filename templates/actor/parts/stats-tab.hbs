@@ -1,0 +1,79 @@
+{{!-- Stats Tab Content --}}
+<div class="tab stats" data-group="primary" data-tab="stats">
+    
+    {{!-- Hit Points --}}
+    <div class="stat-block hp-block">
+        <h2>Hit Points</h2>
+        <div class="hp-display">
+            <div class="hp-input">
+                <label>Current</label>
+                <input type="number" name="system.hp.value" value="{{system.hp.value}}" 
+                       max="{{system.hp.max}}" data-dtype="Number"/>
+            </div>
+            <div class="hp-separator">/</div>
+            <div class="hp-max">
+                <label>Max</label>
+                <div class="hp-max-value">{{system.hp.max}}</div>
+            </div>
+            <div class="hp-input temp">
+                <label>Temp</label>
+                <input type="number" name="system.hp.temp" value="{{system.hp.temp}}" 
+                       min="0" data-dtype="Number"/>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Attributes --}}
+    <div class="stat-block attributes">
+        <h2>Attributes</h2>
+        <div class="attributes-grid">
+            <div class="attribute">
+                <label>Strength</label>
+                <div class="attribute-value">{{system.attributes.strength}}</div>
+            </div>
+            <div class="attribute">
+                <label>Dexterity</label>
+                <div class="attribute-value">{{system.attributes.dexterity}}</div>
+            </div>
+            <div class="attribute">
+                <label>Vitality</label>
+                <div class="attribute-value">{{system.attributes.vitality}}</div>
+            </div>
+            <div class="attribute">
+                <label>Intelligence</label>
+                <div class="attribute-value">{{system.attributes.intelligence}}</div>
+            </div>
+            <div class="attribute">
+                <label>Mind</label>
+                <div class="attribute-value">{{system.attributes.mind}}</div>
+            </div>
+            <div class="attribute">
+                <label>Piety</label>
+                <div class="attribute-value">{{system.attributes.piety}}</div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Defensive Stats --}}
+    <div class="stat-block defenses">
+        <h2>Defenses</h2>
+        <div class="defenses-grid">
+            <div class="defense-stat">
+                <label>Defense</label>
+                <div class="stat-value">{{system.defense}}</div>
+            </div>
+            <div class="defense-stat">
+                <label>Magic Defense</label>
+                <div class="stat-value">{{system.magicDefense}}</div>
+            </div>
+            <div class="defense-stat">
+                <label>Vigilance</label>
+                <div class="stat-value">{{system.vigilance}}</div>
+            </div>
+            <div class="defense-stat">
+                <label>Speed</label>
+                <div class="stat-value">{{system.speed}}</div>
+            </div>
+        </div>
+    </div>
+</div>

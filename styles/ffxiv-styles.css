@@ -1,0 +1,498 @@
+/* ================== */
+/* FFXIV TTRPG Styles */
+/* ================== */
+
+/* Sheet Layout */
+.ffxiv.sheet {
+    font-family: "Signika", sans-serif;
+}
+
+.ffxiv.sheet .window-content {
+    background: #e8e4d8;
+    overflow: hidden;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.ffxiv.sheet form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+/* Prevent content from exceeding window width */
+.ffxiv.sheet .sheet-header,
+.ffxiv.sheet .job-row,
+.ffxiv.sheet .sheet-content {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==================== */
+/* Header Section */
+/* ==================== */
+.ffxiv .sheet-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: #d4d0c4;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.ffxiv .level-display {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.ffxiv .header-center {
+    flex: 1;
+}
+
+.ffxiv .name-banner {
+    background: white;
+    border: 1px solid #8b7355;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.ffxiv .job-icon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    object-fit: cover;
+    background: white;
+}
+
+/* Job Row */
+.ffxiv .job-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #d4d0c4;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.ffxiv .job-row label {
+    font-weight: bold;
+    color: #5a5a5a;
+}
+
+.ffxiv .job-row select {
+    flex: 1;
+    background: white;
+    border: 1px solid #8b7355;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+/* ==================== */
+/* Tab Navigation */
+/* ==================== */
+.ffxiv.sheet .sheet-tabs {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.ffxiv .sheet-tabs .item {
+    padding: 1rem 0.75rem;
+    text-align: center;
+    color: #2c3e50;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #d4d0c4;
+    border: 2px solid #8b7355;
+    border-radius: 0 8px 8px 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    min-width: 50px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ffxiv .sheet-tabs .item:hover {
+    background: #c9aa71;
+    color: white;
+    transform: translateX(5px);
+}
+
+.ffxiv .sheet-tabs .item.active {
+    background: #8b7355;
+    color: white;
+    border-color: #6b5940;
+}
+
+/* Sheet Body for Tab Content */
+.ffxiv .sheet-body {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: 100%;
+}
+
+.ffxiv .sheet-body .tab {
+    display: none;
+}
+
+.ffxiv .sheet-body .tab.active {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* ==================== */
+/* Main Content */
+/* ==================== */
+.ffxiv .sheet-content {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+/* ==================== */
+/* Left Panel - Portrait and Profile */
+/* ==================== */
+.ffxiv .left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 0;
+    min-width: 300px;
+    overflow-y: auto;
+}
+
+.ffxiv .portrait-frame {
+    border: 3px solid #8b7355;
+    border-radius: 12px;
+    background: white;
+    padding: 0.5rem;
+    aspect-ratio: 1;
+}
+
+.ffxiv .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ffxiv .profile-section {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.75rem;
+    flex: 1;
+}
+
+.ffxiv .profile-section h3 {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dotted #8b7355;
+    text-transform: uppercase;
+    color: #5a5a5a;
+}
+
+.ffxiv .profile-field {
+    margin-bottom: 0.5rem;
+}
+
+.ffxiv .profile-field label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #5a5a5a;
+    display: block;
+    margin-bottom: 0.1rem;
+}
+
+.ffxiv .profile-field input,
+.ffxiv .profile-field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dotted #ccc;
+    padding: 0.2rem;
+    font-size: 0.85rem;
+    resize: none;
+}
+
+.ffxiv .profile-text textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    resize: none;
+    min-height: 150px;
+}
+
+/* ==================== */
+/* Right Panel - Stats */
+/* ==================== */
+.ffxiv .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 0;
+    min-width: 300px;
+    overflow-y: auto;
+}
+
+/* Attributes Container - Two Columns */
+.ffxiv .attributes-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ffxiv .attribute-column {
+    flex: 1;
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.ffxiv .attribute-column .column-label {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #5a5a5a;
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #8b7355;
+}
+
+.ffxiv .attribute {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.3rem;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+.ffxiv .attribute:last-child {
+    margin-bottom: 0;
+}
+
+.ffxiv .attribute label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.ffxiv .attribute-value {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Resource Boxes (MP and HP) */
+.ffxiv .resource-box {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.ffxiv .resource-box label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.ffxiv .mp-box .resource-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.ffxiv .mp-box .resource-note {
+    font-size: 0.65rem;
+    color: #666;
+    font-style: italic;
+}
+
+.ffxiv .mp-box .resource-max {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ffxiv .mp-box .resource-max label {
+    font-size: 0.75rem;
+}
+
+.ffxiv .mp-box .resource-max input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ffxiv .hp-box .resource-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.ffxiv .hp-box .resource-main {
+    flex: 1;
+}
+
+.ffxiv .hp-box .resource-max {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.ffxiv .hp-box .resource-max label {
+    font-size: 0.75rem;
+}
+
+.ffxiv .hp-box .max-value {
+    flex: 1;
+    padding: 0.5rem;
+    background: #f5f5f5;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ffxiv .barrier-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.ffxiv .barrier-field label {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.ffxiv .barrier-field input {
+    padding: 0.5rem;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Rules Boxes */
+.ffxiv .rules-box {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.ffxiv .rules-box h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 1px solid #8b7355;
+    padding-bottom: 0.25rem;
+}
+
+.ffxiv .rules-text {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+/* Items Section */
+.ffxiv .items-section {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.ffxiv .items-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.ffxiv .items-section .item-icon {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+/* Input Styling */
+.ffxiv input[type="text"],
+.ffxiv input[type="number"],
+.ffxiv select,
+.ffxiv textarea {
+    font-family: "Signika", sans-serif;
+}
+
+.ffxiv input:focus,
+.ffxiv select:focus,
+.ffxiv textarea:focus {
+    outline: none;
+    border-color: #6b5940;
+}

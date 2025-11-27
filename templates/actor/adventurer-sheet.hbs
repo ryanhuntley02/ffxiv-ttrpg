@@ -1,0 +1,158 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{!-- Top Header --}}
+    <header class="sheet-header">
+        <div class="header-left">
+            <div class="level-display">LV:{{system.level}}</div>
+        </div>
+        <div class="header-center">
+            <input class="name-banner" name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+        </div>
+        <div class="header-right">
+            <img class="job-icon" src="systems/ffxiv-ttrpg/assets/jobs/{{system.job}}.png" alt="{{system.job}}" />
+        </div>
+    </header>
+    
+    {{!-- Job Selection Row --}}
+    <div class="job-row">
+        <label>Job:</label>
+        <select name="system.job">
+            {{#select system.job}}
+            {{#each config.jobs as |job jobKey|}}
+            <option value="{{jobKey}}">{{job.label}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+
+    {{!-- Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="stats">Stats</a>
+        <a class="item" data-tab="abilities">Abilities</a>
+        <a class="item" data-tab="inventory">Inventory</a>
+    </nav>
+
+    {{!-- Main Content Area --}}
+    <div class="sheet-body">
+        {{!-- Stats Tab --}}
+        <div class="tab stats" data-group="primary" data-tab="stats">
+            <div class="sheet-content">
+                {{!-- Left Side: Portrait and Profile --}}
+                <div class="left-panel">
+            <div class="portrait-frame">
+                <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+            </div>
+            
+            <div class="profile-section">
+                <h3>Profile</h3>
+                <div class="profile-field">
+                    <label>Origins:</label>
+                    <input type="text" name="system.profile.origins" value="{{system.profile.origins}}"/>
+                </div>
+                <div class="profile-field">
+                    <label>Motive:</label>
+                    <input type="text" name="system.profile.motivePower" value="{{system.profile.motivePower}}"/>
+                </div>
+                <div class="profile-field">
+                    <label>Bond:</label>
+                    <textarea name="system.profile.bond" rows="2">{{system.profile.bond}}</textarea>
+                </div>
+                <div class="profile-text">
+                    <textarea name="system.profile.description" rows="8">{{system.profile.description}}</textarea>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Right Side: Stats and Resources --}}
+        <div class="right-panel">
+
+            {{!-- Attributes in Two Columns --}}
+            <div class="attributes-container">
+                <div class="attribute-column">
+                    <h3 class="column-label">Primary Attributes</h3>
+                    <div class="attribute">
+                        <label>STR</label>
+                        <div class="attribute-value">{{numberFormat system.attributes.strength decimals=0 sign=true}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>DEX</label>
+                        <div class="attribute-value">{{numberFormat system.attributes.dexterity decimals=0 sign=true}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>VIT</label>
+                        <div class="attribute-value">{{numberFormat system.attributes.vitality decimals=0 sign=true}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>INT</label>
+                        <div class="attribute-value">{{numberFormat system.attributes.intelligence decimals=0 sign=true}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>MND</label>
+                        <div class="attribute-value">{{numberFormat system.attributes.mind decimals=0 sign=true}}</div>
+                    </div>
+                </div>
+                
+                <div class="attribute-column">
+                    <h3 class="column-label">Secondary Attributes</h3>
+                    <div class="attribute">
+                        <label>Defense</label>
+                        <div class="attribute-value">{{system.defense}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>Magic Defense</label>
+                        <div class="attribute-value">{{system.magicDefense}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>Vigilance</label>
+                        <div class="attribute-value">{{system.vigilance}}</div>
+                    </div>
+                    <div class="attribute">
+                        <label>Speed</label>
+                        <div class="attribute-value">{{system.speed}} squares</div>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- MP Section --}}
+            <div class="resource-box mp-box">
+                <div class="resource-header">
+                    <label>MP</label>
+                    <div class="resource-note">Recover 2 MP at the end of the [Adventurer Step]</div>
+                </div>
+                <div class="resource-max">
+                    <label>MAX</label>
+                    <input type="number" name="system.mp.max" value="{{system.mp.max}}" data-dtype="Number"/>
+                </div>
+            </div>
+
+            {{!-- HP Section --}}
+            <div class="resource-box hp-box">
+                <div class="resource-row">
+                    <div class="resource-main">
+                        <label>HP</label>
+                        <div class="resource-max">
+                            <label>MAX</label>
+                            <div class="max-value">{{system.hp.max}}</div>
+                        </div>
+                    </div>
+                    <div class="barrier-field">
+                        <label>Barrier</label>
+                        <input type="number" name="system.barrier" value="{{system.barrier}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        {{!-- Abilities Tab --}}
+        <div class="tab abilities" data-group="primary" data-tab="abilities">
+            <h2>Abilities</h2>
+            <p>Abilities content coming soon...</p>
+        </div>
+
+        {{!-- Inventory Tab --}}
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+            <h2>Inventory</h2>
+            <p>Inventory content coming soon...</p>
+        </div>
+    </div>
+</form>

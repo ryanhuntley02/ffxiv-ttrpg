@@ -1,0 +1,39 @@
+{
+  "id": "ffxiv-ttrpg",
+  "title": "Final Fantasy XIV TTRPG",
+  "description": "A tabletop role-playing game system based on Final Fantasy XIV.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13
+  },
+  "authors": [{
+    "name": "Lily Huntley",
+    "url": "www.github.com/ryanhuntley02"
+  }],
+  "esmodules": ["ffxiv-ttrpg.mjs"],
+  "styles": ["styles/ffxiv-styles.css"],
+  "languages": [{
+    "lang": "en",
+    "name": "English",
+    "path": "lang/en.json"
+  }],
+  "documentTypes": {
+    "Actor": {
+      "adventurer": {}
+    },
+    "Item": {
+      "weapon": {},
+      "spell": {}
+    }
+  },
+  "grid": {
+    "distance": 1,
+    "units": "ym"
+  },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": null,
+  "url": "https://github.com/ryanhuntley02/ffxiv-ttrpg",
+  "manifest": "https://github.com/ryanhuntley02/ffxiv-ttrpg/system.json",
+  "download": "https://github.com/ryanhuntley02/ffxiv-ttrpg/archive/refs/heads/main.zip"
+}
