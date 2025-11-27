@@ -19,7 +19,7 @@ export default class AdventurerData extends foundry.abstract.TypeDataModel {
             }),
 
             // Character level
-            level: AttributesFields.level,
+            level: new NumberField({initial: 30, integer: true, min: 1, max: 100}),
 
             // Hit Points
             hp: new SchemaField(AttributesFields.hitPoints),

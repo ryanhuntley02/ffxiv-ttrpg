@@ -2,7 +2,10 @@
     {{!-- Top Header --}}
     <header class="sheet-header">
         <div class="header-left">
-            <div class="level-display">LV:{{system.level}}</div>
+            <div class="level-display">
+                <label>LV:</label>
+                <input type="number" name="system.level" value="{{system.level}}" min="1" max="100" data-dtype="Number"/>
+            </div>
         </div>
         <div class="header-center">
             <input class="name-banner" name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
@@ -24,7 +27,7 @@
         </select>
     </div>
 
-    {{!-- Tab Navigation --}}
+    {{!-- Tab Navigation Bar --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="stats">Stats</a>
         <a class="item" data-tab="abilities">Abilities</a>
