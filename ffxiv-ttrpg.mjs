@@ -40,6 +40,25 @@ Hooks.once("init", function() {
 });
 
 /**
+ * Update token names when actor name changes
+ */
+Hooks.on("updateActor", async function(actor, changes, options, userId) {
+    // If the actor name changed and this isn't a token sync update
+    if (changes.name && !options.tokenSync) {
+        // Update prototype token
+        await actor.update({ "prototypeToken.name": changes.name }, { tokenSync: true });
+        
+        // Update all placed tokens across all scenes
+        for (const scene of game.scenes) {
+            const tokens = scene.tokens.filter(t => t.actorId === actor.id);
+            for (const tokenDoc of tokens) {
+                await tokenDoc.update({ name: changes.name });
+            }
+        }
+    }
+});
+
+/**
  * Log ready message
  */
 Hooks.once("ready", function() {
