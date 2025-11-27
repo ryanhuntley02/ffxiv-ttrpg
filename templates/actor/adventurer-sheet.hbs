@@ -118,9 +118,10 @@
                     <label>MP</label>
                     <div class="resource-note">Recover 2 MP at the end of the [Adventurer Step]</div>
                 </div>
-                <div class="resource-max">
-                    <label>MAX</label>
-                    <input type="number" name="system.mp.max" value="{{system.mp.max}}" data-dtype="Number"/>
+                <div class="mp-display">
+                    <input type="number" class="mp-current" name="system.mp.value" value="{{system.mp.value}}" min="0" max="{{system.mp.max}}" data-dtype="Number"/>
+                    <span class="mp-separator">/</span>
+                    <div class="mp-max">{{system.mp.max}}</div>
                 </div>
             </div>
 
@@ -129,14 +130,15 @@
                 <div class="resource-row">
                     <div class="resource-main">
                         <label>HP</label>
-                        <div class="resource-max">
-                            <label>MAX</label>
-                            <div class="max-value">{{system.hp.max}}</div>
+                        <div class="hp-display">
+                            <input type="number" class="hp-current" name="system.hp.value" value="{{system.hp.value}}" min="0" max="{{system.hp.max}}" data-dtype="Number"/>
+                            <span class="hp-separator">/</span>
+                            <div class="hp-max">{{system.hp.max}}</div>
                         </div>
                     </div>
                     <div class="barrier-field">
                         <label>Barrier</label>
-                        <input type="number" name="system.barrier" value="{{system.barrier}}" data-dtype="Number"/>
+                        <input type="number" name="system.barrier" value="{{system.barrier}}" min="0" data-dtype="Number"/>
                     </div>
                 </div>
             </div>

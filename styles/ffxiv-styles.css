@@ -9,7 +9,8 @@
 
 .ffxiv.sheet .window-content {
     background: #e8e4d8;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 1rem;
     position: relative;
     width: 100%;
@@ -20,9 +21,6 @@
 .ffxiv.sheet form {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    max-height: 100%;
-    overflow: hidden;
 }
 
 /* Prevent content from exceeding window width */
@@ -155,12 +153,8 @@
 /* Sheet Body for Tab Content */
 .ffxiv .sheet-body {
     position: relative;
-    flex: 1;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 0;
-    max-height: 100%;
 }
 
 .ffxiv .sheet-body .tab {
@@ -170,9 +164,6 @@
 .ffxiv .sheet-body .tab.active {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    overflow: hidden;
-    min-height: 0;
 }
 
 /* ==================== */
@@ -182,8 +173,6 @@
     display: flex;
     gap: 1rem;
     flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
     min-height: 0;
 }
 
@@ -197,7 +186,6 @@
     gap: 0.5rem;
     min-height: 0;
     min-width: 300px;
-    overflow-y: auto;
 }
 
 .ffxiv .portrait-frame {
@@ -278,7 +266,6 @@
     gap: 0.5rem;
     min-height: 0;
     min-width: 300px;
-    overflow-y: auto;
 }
 
 /* Attributes Container - Two Columns */
@@ -363,17 +350,13 @@
     font-style: italic;
 }
 
-.ffxiv .mp-box .resource-max {
+.ffxiv .mp-box .mp-display {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.ffxiv .mp-box .resource-max label {
-    font-size: 0.75rem;
-}
-
-.ffxiv .mp-box .resource-max input {
+.ffxiv .mp-box .mp-current {
     flex: 1;
     padding: 0.5rem;
     border: 1px solid #8b7355;
@@ -381,57 +364,91 @@
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
+}
+
+.ffxiv .mp-box .mp-separator {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.ffxiv .mp-box .mp-max {
+    padding: 0.5rem;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background: #f5f5f5;
+    min-width: 60px;
 }
 
 .ffxiv .hp-box .resource-row {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .ffxiv .hp-box .resource-main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.ffxiv .hp-box .resource-max {
+.ffxiv .hp-box .hp-display {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.5rem;
 }
 
-.ffxiv .hp-box .resource-max label {
-    font-size: 0.75rem;
-}
-
-.ffxiv .hp-box .max-value {
+.ffxiv .hp-box .hp-current {
     flex: 1;
     padding: 0.5rem;
-    background: #f5f5f5;
     border: 1px solid #8b7355;
     border-radius: 4px;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
+}
+
+.ffxiv .hp-box .hp-separator {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.ffxiv .hp-box .hp-max {
+    padding: 0.5rem;
+    border: 1px solid #8b7355;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background: #f5f5f5;
+    min-width: 60px;
 }
 
 .ffxiv .barrier-field {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
 }
 
 .ffxiv .barrier-field label {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
 }
 
 .ffxiv .barrier-field input {
     padding: 0.5rem;
     border: 1px solid #8b7355;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     text-align: center;
 }
 
