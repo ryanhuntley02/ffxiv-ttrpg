@@ -32,7 +32,7 @@
     "units": "ym"
   },
   "primaryTokenAttribute": "hp",
-  "secondaryTokenAttribute": null,
+  "secondaryTokenAttribute": "mp",
   "url": "https://github.com/ryanhuntley02/ffxiv-ttrpg",
   "manifest": "https://github.com/ryanhuntley02/ffxiv-ttrpg/system.json",
   "download": "https://github.com/ryanhuntley02/ffxiv-ttrpg/archive/refs/heads/main.zip"

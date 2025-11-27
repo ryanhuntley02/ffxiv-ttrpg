@@ -1,4 +1,5 @@
 import { FFXIV } from "./module/config.mjs";
+import FFXIVActor from "./module/actor/actor-ffxiv.mjs";
 import AdventurerData from "./module/actor/adventurer.mjs";
 import AdventurerSheet from "./module/actor/adventurer-sheet.mjs";
 
@@ -10,6 +11,17 @@ Hooks.once("init", function() {
 
     // Make config globally accessible
     CONFIG.FFXIV = FFXIV;
+
+    // Register custom Actor class
+    CONFIG.Actor.documentClass = FFXIVActor;
+
+    // Configure token bars
+    CONFIG.Actor.trackableAttributes = {
+        adventurer: {
+            bar: ["hp", "mp"],
+            value: []
+        }
+    };
 
     // Register data models
     CONFIG.Actor.dataModels.adventurer = AdventurerData;

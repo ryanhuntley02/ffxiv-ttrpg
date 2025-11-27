@@ -120,9 +120,11 @@
     flex: 1;
     background: white;
     border: 1px solid #8b7355;
-    padding: 0.25rem 0.5rem;
+    padding: 0.4rem 0.5rem;
     font-size: 1rem;
     border-radius: 4px;
+    height: auto;
+    min-height: 2rem;
 }
 
 /* ==================== */

@@ -104,6 +104,11 @@ export default class AdventurerData extends foundry.abstract.TypeDataModel {
             this.speed = statsForLevel.speed;
         }
         
+        // Set initial HP to max for new characters
+        if (this.hp.value === 0 && this.hp.max > 0) {
+            this.hp.value = this.hp.max;
+        }
+        
         // Ensure current HP doesn't exceed max
         if (this.hp.value > this.hp.max) {
             this.hp.value = this.hp.max;
